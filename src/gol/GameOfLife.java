@@ -58,7 +58,19 @@ public class GameOfLife {
 
     // wendet die 4 Regeln an und gibt die Folgegeneration wieder zurück
     public static boolean[][] wendeRegelnAn(boolean[][] welt) {
+      boolean[][] welt_neu = new boolean[DIM1][DIM2];
+      int nachbarn;
 
+      for (int y=1; y<DIM2-1; y++) {
+        for (int x=1; x<DIM1; x++) {
+          nachbarn = anzNachbarn(welt, x, y);
+
+          if (welt[x][y]) {
+            welt_neu[x][y] = (welt[x][y] && (nachbarn == 2)) || (nachbarn == 3);
+          }
+        }
+      }
+      return welt_neu; 
     }
 
     public static void main(String[] args) {
