@@ -4,11 +4,11 @@ import java.lang.Math;
 
 public class GameOfLife {
     // global definierte Konstanten für die beiden Dimensionen
-    final static int DIM1 = <Dimension 1>;
-    final static int DIM2 = <Dimension 2>;
+    final static int DIM1 = 10;
+    final static int DIM2 = 10;
 
     // liefert eine zufällig initialisierte Welt
-    public static bolean[][] initWelt() {
+    public static boolean[][] initWelt() {
       boolean[][] welt = new boolean[DIM1][DIM2];
 
       for (int y=0; y<DIM2; y++) {
@@ -84,6 +84,5 @@ public class GameOfLife {
             System.out.println("Generation "+i);
             zeigeWelt(welt);
         }
-    )
     }
 }
