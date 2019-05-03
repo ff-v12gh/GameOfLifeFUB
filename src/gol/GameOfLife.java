@@ -38,6 +38,24 @@ public class GameOfLife {
       System.out.println();
     }
 
+
+    // zahlt die Anzahl an Nachbarn
+    public static int anzNachbarn (boolean[][] welt, int x, int y) {
+      int ret = 0;
+      for (int i=x-1; i<=x+1; ++i) {
+        for (int j=y-1; j<=y+1; ++j) {
+          if (welt[i][j]) {
+            ret += 1;
+          }
+        }
+      }
+      // einen Nachbarn zuviel mitgezählt?
+      if (welt[x][y]) {
+        ret -= 1;
+      }
+      return ret;
+    }
+
     // wendet die 4 Regeln an und gibt die Folgegeneration wieder zurück
     public static boolean[][] wendeRegelnAn(boolean[][] welt) {
 
