@@ -25,7 +25,17 @@ public class GameOfLife {
 
     // gibt die aktuelle Welt aus
     public static void zeigeWelt(boolean[][] welt) {
-
+      for (int y=1; y<DIM2-1; y++) {
+        for (int x=1; x<DIM1-1; x++) {
+          if (welt[x][y]) {
+            System.out.println("X");
+          }else{
+            System.out.println(" ");
+          }
+        }
+        System.out.println();
+      }
+      System.out.println();
     }
 
     // wendet die 4 Regeln an und gibt die Folgegeneration wieder zurück
